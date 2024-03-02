@@ -38,7 +38,7 @@ class PilhaEstatica : IPilha {
         ponteiroTopo++
         dados[ponteiroTopo] = dado
       } else {
-        throw IllegalArgumentException("Pilha Cheia")
+        println("Pilha Cheia")
       }
     }
   
