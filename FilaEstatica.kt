@@ -6,9 +6,11 @@ class FilaEstatica(tamanho: Int = 10): Enfileiravel {
 
     // métodos principais
     override fun enfileirar(dado: Any?) {
-        if (!estaVazia()) {
+        if (!estaCheia()) {
             ponteiroTras++
             dados[ponteiroTras] = dado
+        } else {
+            println("Full Stack")
         }
     }
 
