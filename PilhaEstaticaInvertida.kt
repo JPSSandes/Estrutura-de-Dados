@@ -1,37 +1,37 @@
-class PilhaEstatica(tamanho: Int = 10): Empilhavel {
-    private var ponteiroTopo: Int = -1
+class PilhaEstaticaInvertida(tamanho: Int = 10): Empilhavel {
+    private var ponteiroTopo: Int = tamanho
     private var dados: Array<Any?> = arrayOfNulls(tamanho)
 
-    // metodos auxiliares
+    // métodos auxiliares
     override fun estaCheia(): Boolean {
-        return (ponteiroTopo == dados.size - 1)
+        return (ponteiroTopo == 0)
     }
 
     override fun estaVazia(): Boolean {
-        return (ponteiroTopo == -1)
+        return (ponteiroTopo == dados.size)
     }
 
     override fun imprimir(): String {
         var impressao = "["
 
-        for (i in ponteiroTopo downTo 0) {
-            if (i == 0) {
+        for  (i in ponteiroTopo .. dados.size - 1) {
+            if (i == dados.size - 1) {
                 impressao += "${dados[i]}"
             } else {
-                impressao  += "${dados[i]}, "
+                impressao += "${dados[i]}, "
             }
         }
 
-        return "${impressao}]"
+        return "$impressao]"
     }
 
     // métodos principais
     override fun empilhar(dado: Any?) {
         if (!estaCheia()) {
-            ponteiroTopo++
+            ponteiroTopo--
             dados[ponteiroTopo] = dado
         } else {
-            println("Pilha Cheia!");
+            println("Pilha Cheia!")
         }
     }
 
@@ -40,7 +40,9 @@ class PilhaEstatica(tamanho: Int = 10): Empilhavel {
 
         if (!estaVazia()) {
             retorno = dados[ponteiroTopo]
-            ponteiroTopo--
+            ponteiroTopo++
+        } else {
+            println("Pilha Vazia!")
         }
 
         return retorno
@@ -51,6 +53,8 @@ class PilhaEstatica(tamanho: Int = 10): Empilhavel {
 
         if (!estaVazia()) {
             retorno = dados[ponteiroTopo]
+        } else {
+            println("Pilha Vazia!")
         }
 
         return retorno
