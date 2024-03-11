@@ -1,25 +1,28 @@
-class FilaEstatica(tamanho: Int = 10): Enfileiravel {
+class FilaEstaticaCircular(tamanho: Int = 10): Enfileiravel {
     private var ponteiroInicio: Int = 0
-    private var ponteiroFim: Int = -1
+    private var ponteiroFim: Int = 0
     private var dados: Array<Any?> = arrayOfNulls(tamanho)
+    private var quantidade: Int = 0
 
-    //  métodos auxiliares
+    // métodos auxiliares
     override fun estaCheia(): Boolean {
-        return (ponteiroFim == dados.size - 1)
+        return (quantidade == dados.size)
     }
 
     override fun estaVazia(): Boolean {
-        return (ponteiroInicio == ponteiroFim + 1)
+        return (quantidade == 0)
     }
 
     override fun imprimir(): String {
         var impressao: String = "["
+        var ponteiroAux: Int = ponteiroInicio
 
-        for (i in ponteiroInicio .. ponteiroFim) {
-            if (i == ponteiroFim) {
-                impressao += "${dados[i]}"
+        for (i in 0 .. quantidade - 1) {
+            if (i == quantidade - 1) {
+                impressao += "${dados[ponteiroAux % dados.size]}"
             } else {
-                impressao += "${dados[i]}, "
+                impressao += "${dados[ponteiroAux % dados.size]}, "
+                ponteiroAux++
             }
         }
 
@@ -38,8 +41,12 @@ class FilaEstatica(tamanho: Int = 10): Enfileiravel {
     override fun enfileirar(dado: Any?) {
         if (!estaCheia()) {
             ponteiroFim++
-            dados[ponteiroFim] = dado
-        }  else {
+            if (ponteiroFim == dados.size) {
+                ponteiroFim = 0
+            }
+            quantidade++
+            dados[ponteiroFim]  = dado
+        } else {
             println("Fila Cheia!")
         }
     }
@@ -49,9 +56,13 @@ class FilaEstatica(tamanho: Int = 10): Enfileiravel {
 
         if (!estaVazia()) {
             retorno = dados[ponteiroInicio]
-            ponteiroInicio--
+            ponteiroInicio++
+            if  (ponteiroInicio == dados.size) {
+                ponteiroInicio = 0
+            }
+            quantidade--
         } else {
-            println("Fila Vazia!")
+            println("Pilha Vazia!")
         }
 
         return retorno
@@ -63,9 +74,10 @@ class FilaEstatica(tamanho: Int = 10): Enfileiravel {
         if (!estaVazia()) {
             retorno = dados[ponteiroInicio]
         } else {
-            println("Fila Vazia!")
+            println("Pilha Vazia!")
         }
 
         return retorno
     }
+
 }
