@@ -20,16 +20,20 @@ fun main() {
     pilhaEstaticaDupla.empilhar2("Meteora")
     pilhaEstaticaDupla.empilhar2("Around the Fur")
 
-    //Fila
+    // Fila
     val filaEstatica = FilaEstatica(3)
     filaEstatica.enfileirar("Here to Stay")
     filaEstatica.enfileirar("Points of Authority")
     filaEstatica.enfileirar("Digital Bath")
     println(filaEstatica.imprimir())
 
+    // Fila Circular
     val filaEstaticaCircular = FilaEstaticaCircular(3)
     filaEstaticaCircular.enfileirar("Here to Stay")
     filaEstaticaCircular.enfileirar("Points of Authority")
     filaEstaticaCircular.enfileirar("Digital Bath")
     println(filaEstaticaCircular.imprimir())
+
+    // Lista
+
 }
