@@ -131,10 +131,11 @@ class ListaEstaticaCircular(tamanho: Int = 10): Listavel {
         var ponteiroAux = ponteiroFim
 
         for (i in 0 .. quantidade) {
-            impressao += if (i == ponteiroFim)
-                "${dados[(ponteiroAux%i) % dados.size]}"
-            else
-                "${dados[(ponteiroAux+i) % dados.size]},  "
+            if (i == ponteiroAux) {
+                impressao += "${dados[(ponteiroAux+i) % dados.size]} "
+            } else {
+                impressao += "${dados[(ponteiroAux+i) %  dados.size]}, "
+            }
         }
 
         return "${impressao}]"

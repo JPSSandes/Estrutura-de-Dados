@@ -4,7 +4,7 @@ interface IPilha{
     fun isEmpty(): Boolean
     fun print(): String
     // métodos principais
-    fun addToStack(dado: <Any?>)
+    fun addToStack(dado: Array<Any?>)
     fun removeFromStack(): Any?
     fun top(): Any?
 }

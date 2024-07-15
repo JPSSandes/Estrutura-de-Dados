@@ -35,9 +35,9 @@ class PilhaDupla: IPilhaDupla {
 
     // métodos print
     override fun printStack1(): String {
-        var retorno := "[ "
+        var retorno = "[ "
 
-        for (int i in dados1.size downTo 0) {
+        for (i in dados1.size downTo 0) {
             if (i == 0) {
                 retorno += "$dados1[i]"
             } else {
@@ -49,9 +49,9 @@ class PilhaDupla: IPilhaDupla {
     }
 
     override fun printStack2(): String {
-        var retorno := "[ "
+        var retorno = "[ "
 
-        for (int i in ponteiroTopo2 until dados2.size - 1) {
+        for (i in ponteiroTopo2 until dados2.size - 1) {
             if (i == dados2.size - 1) {
                 retorno += "$dados1[i]"
             } else {
@@ -96,7 +96,7 @@ class PilhaDupla: IPilhaDupla {
     override fun removeFromStack2(): Any? {
         var retorno: Any? = null
 
-        if (!estaVazio2()) {
+        if (!isEmpty2()) {
             retorno = dados2[ponteiroTopo2]
             ponteiroTopo2++
         } else {
@@ -121,7 +121,7 @@ class PilhaDupla: IPilhaDupla {
     override fun top2(): Any? {
         var retorno: Any? = null
 
-        if (!estaVazio2()) {
+        if (!isEmpty2()) {
             retorno = dados2[ponteiroTopo2]
         } else {
             println("Pilha Vazia!")
