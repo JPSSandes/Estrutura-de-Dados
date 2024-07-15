@@ -42,4 +42,9 @@ fun main() {
     listaEstaticaCircular.anexar("Digital Bath")
 
     /* Estruturas de Dados Dinâmicas */
+    val pilhaDinamica = PilhaDinamica(3)
+    pilhaDinamica.empilhar("Here to Stay")
+    pilhaDinamica.empilhar("Points of Authority")
+    pilhaDinamica.empilhar("Digital Bath")
+    println(pilhaDinamica.imprimir())
 }
