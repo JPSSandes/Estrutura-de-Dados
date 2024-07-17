@@ -23,13 +23,13 @@ fun main() {
     pilhaEstaticaDupla.empilhar2("Meteora")
     pilhaEstaticaDupla.empilhar2("Around the Fur")
 
-    // Fila
+    // Fila Estática
     val filaEstatica = FilaEstatica(3)
     filaEstatica.enfileirar("Here to Stay")
     filaEstatica.enfileirar("Points of Authority")
     filaEstatica.enfileirar("Digital Bath")
 
-    // Fila Circular
+    // Fila Estática Circular
     val filaEstaticaCircular = FilaEstaticaCircular(3)
     filaEstaticaCircular.enfileirar("Here to Stay")
     filaEstaticaCircular.enfileirar("Points of Authority")
@@ -42,9 +42,18 @@ fun main() {
     listaEstaticaCircular.anexar("Digital Bath")
 
     /* Estruturas de Dados Dinâmicas */
+
+    // Pilha Dinâmica
     val pilhaDinamica = PilhaDinamica(3)
     pilhaDinamica.empilhar("Here to Stay")
     pilhaDinamica.empilhar("Points of Authority")
     pilhaDinamica.empilhar("Digital Bath")
     println(pilhaDinamica.imprimir())
+
+    // Fila Dinâmica
+    val filaDinamica = FilaDinamica(3)
+    filaDinamica.enfileirar("Here to Stay")
+    filaDinamica.enfileirar("Points of Authority")
+    filaDinamica.enfileirar("Digital Bath")
+    println(filaDinamica.imprimir())
 }
