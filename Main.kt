@@ -48,12 +48,16 @@ fun main() {
     pilhaDinamica.empilhar("Here to Stay")
     pilhaDinamica.empilhar("Points of Authority")
     pilhaDinamica.empilhar("Digital Bath")
-    println(pilhaDinamica.imprimir())
 
     // Fila Dinâmica
     val filaDinamica = FilaDinamica(3)
     filaDinamica.enfileirar("Here to Stay")
     filaDinamica.enfileirar("Points of Authority")
     filaDinamica.enfileirar("Digital Bath")
-    println(filaDinamica.imprimir())
+
+    // Lista Dinâmica
+    val listaDinamica = ListaDinamica(3)
+    listaDinamica.anexar("Here to Stay")
+    listaDinamica.anexar("Points of Authority")
+    listaDinamica.anexar("Digital Bath")
 }

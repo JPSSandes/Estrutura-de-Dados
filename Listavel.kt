@@ -6,6 +6,8 @@ interface Listavel {
     fun selecionarTodos(): Array<Any?>
     fun atualizar(posicao: Int, dado: Any?)
     fun apagar(posicao: Int): Any?
+    fun apagarTodos(): Array<Any?>
+    fun limpar()
 
     // métodos auxiliares
     fun estaCheia(): Boolean

@@ -118,6 +118,14 @@ class ListaEstaticaCircular(tamanho: Int = 10): Listavel {
         return dadoAux
     }
 
+    override fun apagarTodos(): Array<Any?> {
+        TODO("Not yet implemented")
+    }
+
+    override fun limpar() {
+        TODO("Not yet implemented")
+    }
+
     override fun estaCheia(): Boolean {
         return (quantidade == dados.size)
     }
